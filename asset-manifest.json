@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/wherebee/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/wherebee/static/js/main.cbc81970.chunk.js",
+    "main.js.map": "/wherebee/static/js/main.cbc81970.chunk.js.map",
+    "runtime-main.js": "/wherebee/static/js/runtime-main.3b752cf2.js",
+    "runtime-main.js.map": "/wherebee/static/js/runtime-main.3b752cf2.js.map",
+    "static/js/2.9df8e2a7.chunk.js": "/wherebee/static/js/2.9df8e2a7.chunk.js",
+    "static/js/2.9df8e2a7.chunk.js.map": "/wherebee/static/js/2.9df8e2a7.chunk.js.map",
+    "static/js/3.ee38389b.chunk.js": "/wherebee/static/js/3.ee38389b.chunk.js",
+    "static/js/3.ee38389b.chunk.js.map": "/wherebee/static/js/3.ee38389b.chunk.js.map",
+    "index.html": "/wherebee/index.html",
+    "service-worker.js": "/wherebee/service-worker.js",
+    "service-worker.js.map": "/wherebee/service-worker.js.map",
+    "static/css/main.8c8b27cf.chunk.css.map": "/wherebee/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.9df8e2a7.chunk.js.LICENSE.txt": "/wherebee/static/js/2.9df8e2a7.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/wherebee/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b752cf2.js",
+    "static/js/2.9df8e2a7.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.cbc81970.chunk.js"
+  ]
+}
