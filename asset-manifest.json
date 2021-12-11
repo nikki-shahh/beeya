@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/where2bee/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/where2bee/static/js/main.053f15ca.chunk.js",
-    "main.js.map": "/where2bee/static/js/main.053f15ca.chunk.js.map",
-    "runtime-main.js": "/where2bee/static/js/runtime-main.9ba57234.js",
-    "runtime-main.js.map": "/where2bee/static/js/runtime-main.9ba57234.js.map",
-    "static/js/2.8f5d298d.chunk.js": "/where2bee/static/js/2.8f5d298d.chunk.js",
-    "static/js/2.8f5d298d.chunk.js.map": "/where2bee/static/js/2.8f5d298d.chunk.js.map",
-    "static/js/3.c17a9a97.chunk.js": "/where2bee/static/js/3.c17a9a97.chunk.js",
-    "static/js/3.c17a9a97.chunk.js.map": "/where2bee/static/js/3.c17a9a97.chunk.js.map",
+    "main.css": "/where2bee/static/css/main.bf4c0180.chunk.css",
+    "main.js": "/where2bee/static/js/main.9ed493d8.chunk.js",
+    "main.js.map": "/where2bee/static/js/main.9ed493d8.chunk.js.map",
+    "runtime-main.js": "/where2bee/static/js/runtime-main.d5b861c9.js",
+    "runtime-main.js.map": "/where2bee/static/js/runtime-main.d5b861c9.js.map",
+    "static/js/2.929366c1.chunk.js": "/where2bee/static/js/2.929366c1.chunk.js",
+    "static/js/2.929366c1.chunk.js.map": "/where2bee/static/js/2.929366c1.chunk.js.map",
+    "static/js/3.abed503a.chunk.js": "/where2bee/static/js/3.abed503a.chunk.js",
+    "static/js/3.abed503a.chunk.js.map": "/where2bee/static/js/3.abed503a.chunk.js.map",
     "index.html": "/where2bee/index.html",
     "service-worker.js": "/where2bee/service-worker.js",
     "service-worker.js.map": "/where2bee/service-worker.js.map",
-    "static/css/main.8c8b27cf.chunk.css.map": "/where2bee/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.8f5d298d.chunk.js.LICENSE.txt": "/where2bee/static/js/2.8f5d298d.chunk.js.LICENSE.txt"
+    "static/css/main.bf4c0180.chunk.css.map": "/where2bee/static/css/main.bf4c0180.chunk.css.map",
+    "static/js/2.929366c1.chunk.js.LICENSE.txt": "/where2bee/static/js/2.929366c1.chunk.js.LICENSE.txt",
+    "static/media/logo.abd952de.png": "/where2bee/static/media/logo.abd952de.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9ba57234.js",
-    "static/js/2.8f5d298d.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.053f15ca.chunk.js"
+    "static/js/runtime-main.d5b861c9.js",
+    "static/js/2.929366c1.chunk.js",
+    "static/css/main.bf4c0180.chunk.css",
+    "static/js/main.9ed493d8.chunk.js"
   ]
 }
