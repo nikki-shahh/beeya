@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
+
     render() {
         return (
             <div className="DefaultNumber">
+                <label>How many events? </label>
                 <input
-                    type="number"
+                    type="text"
                     className="NumberOfEvents"
                     value={this.props.numberOfEvents}
-                    onChange={this.props.updateNumberOfEvents}
+                    onChange={(e) => this.props.updateNumberOfEvents(e)}
                 />
             </div>
         );

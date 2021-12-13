@@ -11,15 +11,19 @@ class Event extends Component {
             collapsed: !this.state.collapsed,
         });
     };
+
     render() {
         const { event } = this.props;
         const { collapsed } = this.state;
+
         return (
             <div className="event">
                 <h4 className="summary" as="h4">{event.summary}</h4>
                 <div className="EventBody">
-                    <p className="StartDate"> {event.start} </p>
-                    <p className="location"> {event.location}</p>
+                    <p className="StartDate">
+                        {event.start.dateTime} | {event.start.timeZone}
+                    </p>
+                    <p className="location"> location:{event.location}</p>
                     <button variant="primary" className="ShowMore" onClick={this.handleClick}>
                         More details
                     </button>
