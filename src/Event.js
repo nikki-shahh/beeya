@@ -1,41 +1,47 @@
 import React, { Component } from 'react';
+import moment from "moment";
 
 
 class Event extends Component {
     state = {
-        collapsed: true,
-    };
-
-    handleClick = () => {
-        this.setState({
-            collapsed: !this.state.collapsed,
-        });
+        showMore: false,
     };
 
     render() {
-        const { event } = this.props;
-        const { collapsed } = this.state;
-
+        const { showMore } = this.state;
+        const { summary, location, start, htmlLink, description } = this.props.event;
+        const eventStart = moment(start.dateTime, "YYYY-MM-DD HH:mm").toDate();
         return (
             <div className="event">
-                <h4 className="summary" as="h4">{event.summary}</h4>
+                <h4 className="summary" as="h4">{summary}</h4>
                 <div className="EventBody">
                     <p className="StartDate">
-                        {event.start.dateTime} | {event.start.timeZone}
+                        {`${eventStart}`} | {start.timeZone}
                     </p>
-                    <p className="location"> location:{event.location}</p>
-                    <button variant="primary" className="ShowMore" onClick={this.handleClick}>
-                        More details
-                    </button>
-                    <div className={`MoreInfo ${collapsed ? `hide` : `show`}`}>
-                        <h3>More about {event.summary} event:</h3>
-                        <a href={event.htmlLink} rel="noreferrer" target="_blank">
+                    <p className="locations"> Location: {location} </p>
+
+                    {showMore && (
+                        <button className="ShowMore" onClick={() => this.setState({ showMore: !showMore })}>
+                            hide details
+                        </button>
+                    )}
+                    {!showMore && (
+                        <button
+                            className="ShowMore" onClick={() => this.setState({ showMore: !showMore })}>
+                            show details
+                        </button>
+                    )}
+                </div>
+                {showMore && (
+                    <div className="MoreInfo">
+                        <h3>More about {summary} event:</h3>
+                        <a href={htmlLink} target="_blank" rel="noopener noreferrer">
                             Click here to see more details on Google Calendar
                         </a>
-                        <p className="EventDescription">{event.description}</p>
+                        <p className="EventDescription">{description}</p>
                     </div>
-                </div>
-            </div>
+                )}
+            </div >
         );
     }
 }

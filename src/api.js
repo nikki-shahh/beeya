@@ -2,15 +2,21 @@ import { mockData } from './mock-data';
 import NProgress from 'nprogress';
 import axios from 'axios';
 
-// const removeQuery = () => {
-//     if (window.history.pushState && window.location.pathname) {
-//         var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-//         window.history.pushState("", "", newurl);
-//     } else {
-//         newurl = window.location.protocol + "//" + window.location.host;
-//         window.history.pushState("", "", newurl);
-//     }
-// };
+const removeQuery = () => {
+    if (window.history.pushState && window.location.pathname) {
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.pushState("", "", newurl);
+    } else {
+        newurl = window.location.protocol + "//" + window.location.host;
+        window.history.pushState("", "", newurl);
+    }
+};
+
+export const extractLocations = (events) => {
+    var extractLocations = events.map((event) => event.location);
+    var locations = [...new Set(extractLocations)];
+    return locations;
+};
 
 export const checkToken = async (accessToken) => {
     const result = await fetch('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}')
@@ -42,12 +48,9 @@ export const getEvents = async () => {
         NProgress.done();
         return mockData;
     }
-
-
     const token = await getAccessToken();
-
     if (token) {
-        // removeQuery();
+        removeQuery();
         const url = 'https://a8tjgkywnd.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
         const result = await axios.get(url);
         if (result.data) {
@@ -58,12 +61,6 @@ export const getEvents = async () => {
         NProgress.done();
         return result.data.events;
     }
-};
-
-export const extractLocations = (events) => {
-    var extractLocations = events.map((event) => event.location);
-    var locations = [...new Set(extractLocations)];
-    return locations;
 };
 
 export const getAccessToken = async () => {

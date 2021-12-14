@@ -14,7 +14,7 @@ describe('<Event/> Component', () => {
     });
     test('renders location', () => {
         const EventWrapper = shallow(<Event event={mockData} />);
-        expect(EventWrapper.find('.location')).toHaveLength(1);
+        expect(EventWrapper.find('.locations')).toHaveLength(1);
     });
     test('renders StartDate', () => {
         const EventWrapper = shallow(<Event event={mockData} />);
@@ -23,25 +23,14 @@ describe('<Event/> Component', () => {
     test("renders ShowMore button", () => {
         expect(EventWrapper.find(".ShowMore")).toHaveLength(1);
     });
-    test("collapsed true", () => {
-        expect(EventWrapper.state("collapsed")).toBe(true);
+    test("showMore true", () => {
+        expect(EventWrapper.state("showMore")).toBe(false);
     });
-    test("change collapsed state to false when click on ShowMore", () => {
+    test("change showMore state to false when click on ShowMore", () => {
         EventWrapper.find('.ShowMore').simulate('click')
-        expect(EventWrapper.state("collapsed")).toBe(false);
+        expect(EventWrapper.state("showMore")).toBe(true);
     });
-    test("expand the event details when collapsed state is false ", () => {
-        EventWrapper.setState({
-            collapsed: false,
-        });
-        const moreInfo = EventWrapper.find(".MoreInfo");
-        expect(moreInfo.find(".show")).toHaveLength(1);
-    });
-    test("hide the event details when collapsed state is true", () => {
-        EventWrapper.setState({
-            collapsed: true,
-        });
-        const moreInfo = EventWrapper.find(".MoreInfo");
-        expect(moreInfo.find(".hide")).toHaveLength(1);
+    test("test that show/hide details button is rendered", () => {
+        expect(EventWrapper.find(".EventBody button")).toHaveLength(1);
     });
 });

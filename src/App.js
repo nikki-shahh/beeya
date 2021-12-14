@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
+import { Container, Row, Col } from "react-bootstrap";
 import { mockData } from './mock-data';
 import "./nprogress.css";
 import logo from './logo.png';
@@ -13,8 +14,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      events: mockData.slice(0, 32),
-      locations: extractLocations(mockData),
+      events: [],
+      locations: {},
       numberOfEvents: 32,
       currentLocation: "all"
     };
@@ -36,14 +37,14 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = async (location, eventCount) => {
+  updateEvents = async (location, numberOfEvents) => {
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
           ? events
           : events.filter((event) => event.location === location);
 
-      const eventsToShow = locationEvents.slice(0, eventCount);
+      const eventsToShow = locationEvents.slice(0, numberOfEvents);
       if (this.mounted) {
         this.setState({
           events: eventsToShow,
@@ -55,27 +56,25 @@ class App extends Component {
 
   updateNumberOfEvents = async (e) => {
     const newVal = e.target.value ? parseInt(e.target.value) : 32;
-
-    if (newVal < 1 || newVal > 32) {
-      await this.setState({
-        errorText: "Please choose a number between 1 and 32",
-      });
-    } else {
-      await this.setState({
-        errorText: "",
-        numberOfEvents: newVal,
-      });
-      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
-    }
+    await this.setState({ numberOfEvents: newVal });
+    this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
   };
 
   render() {
     return (
       <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
+        <main>
+          <img src={logo} className="App-logo" alt="logo" />
+          <Container fluid>
+            <Row className="d-flex justify-content-center pt-0">
+              <Col md={3} sm={10}>
+                <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+                <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+              </Col>
+            </Row>
+            <EventList events={this.state.events} />
+          </Container>
+        </main>
       </div>
     );
   }
