@@ -6,18 +6,15 @@ import { mockData } from '../mock-data';
 describe('<Event/> Component', () => {
     let EventWrapper;
     beforeAll(() => {
-        EventWrapper = shallow(<Event event={mockData} />);
+        EventWrapper = shallow(<Event event={mockData[0]} />);
     });
     test('renders summary', () => {
-        const EventWrapper = shallow(<Event event={mockData} />);
         expect(EventWrapper.find('.summary')).toHaveLength(1);
     });
     test('renders location', () => {
-        const EventWrapper = shallow(<Event event={mockData} />);
         expect(EventWrapper.find('.locations')).toHaveLength(1);
     });
     test('renders StartDate', () => {
-        const EventWrapper = shallow(<Event event={mockData} />);
         expect(EventWrapper.find('.StartDate')).toHaveLength(1);
     });
     test("renders ShowMore button", () => {
