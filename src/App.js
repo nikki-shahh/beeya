@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { Container, Row, Col } from "react-bootstrap";
-import { mockData } from './mock-data';
+import { InfoAlert } from './Alert';
 import "./nprogress.css";
 import logo from './logo.png';
 
@@ -73,7 +73,10 @@ class App extends Component {
     return (
       <div className="App">
         <main>
-          <img src={logo} className="App-logo" alt="logo" />
+          <div>
+            <img src={logo} className="App-logo" alt="logo" />
+            {!navigator.onLine ? (<InfoAlert text='You are offline!' />) : (<InfoAlert text=' ' />)}
+          </div>
           <Container fluid>
             <Row className="d-flex justify-content-center pt-0">
               <Col md={3} sm={10}>
