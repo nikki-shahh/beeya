@@ -9,9 +9,6 @@ class Alert extends Component {
     getStyle = () => {
         return {
             color: this.color,
-            fontSize: '1.2rem',
-            padding: '10px',
-            borderRadius: '5px'
         };
     }
 

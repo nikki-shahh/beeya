@@ -7,6 +7,7 @@ class NumberOfEvents extends Component {
         return (
             <div className="DefaultNumber">
                 <label>How many events? </label>
+                <br></br>
                 <input
                     type="text"
                     className="NumberOfEvents"
