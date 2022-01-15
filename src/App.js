@@ -91,9 +91,11 @@ class App extends Component {
   };
 
   render() {
-    const { events } = this.state;
     if (this.state.showWelcomeScreen === undefined) return <div
       className="App" />
+
+    const events = this.state.events.slice(0, this.state.numberOfEvents);
+
     return (
       <div className="App">
         <main>
