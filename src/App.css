@@ -4,7 +4,7 @@
   text-align: center;
   padding: 2% 5%;
   background-color: #fffced;
-  color: #4e1d02;
+  color: #7a5239;
 }
 
 .App * {
@@ -103,10 +103,9 @@ button.ShowMore:hover{
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding: 24px;
   text-align: left;
-  border: 1px solid #4e1d02c2;
-  background: #fff9e1;
+  border: 1px solid rgb(235 191 167 / 82%);
   border-radius: 10px;
   position: relative;
   max-width: 400px;
